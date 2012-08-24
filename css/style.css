@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+div#header { 
+	margin-top: 70px;
+}
+
+div#header #form-busca{ 
+	margin: 0px;
+	margin-top: 5px;
+	
+}
+
+div#content #slider, div#content #agenda { 
+	margin-top: 20px;
+}
+
+div#content #slider{ 
+	margin-left: 0px;
+}
