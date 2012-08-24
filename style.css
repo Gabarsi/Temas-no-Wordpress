@@ -1,0 +1,41 @@
+/*
+Theme Name: Tema Legal do Jeff
+Theme URI: http://emproducao.com.br/jeff-souza
+Version: 0.1
+Description: Tema criado na aula da Iparos Design Studio em 21-08-2012
+Author: Jefferson Souza
+Author URI: http://eusouojeff.com.br
+Tags: one-column, two-columns, three-columns, fixedwidth,
+sticky-post, threaded-comments, microformats
+*/
+
+@CHARSET "UTF-8";
+
+div#header { 
+	margin-top: 70px;
+}
+
+div#header #form-busca{ 
+	margin: 0px;
+	margin-top: 5px;
+	
+}
+
+div#content #slider, div#content #agenda { 
+	margin-top: 20px;
+}
+
+div#content #slider{ 
+	margin-left: 0px;
+}
+.agenda {
+    list-style: none;
+}
+.agenda li{
+    border-bottom: #ccc 1px solid;
+    margin-bottom: 10px;
+}
+
+.foto-artista{
+    margin: 0;
+}
