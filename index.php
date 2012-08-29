@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<?php get_sidebar('sidebar-topo'); ?>
 
 
     <div id="slider" class="carousel slide span7">
@@ -88,14 +88,14 @@
             <div class="span3 well">
                 <?php 
                 if(has_post_thumbnail()){
-                    the_post_thumbnail(array(), array('class' => 'span3 foto-artista', 'alt' => get_the_excerpt()));
+                    the_post_thumbnail('thumbnail', array('class' => 'span3 foto-artista', 'alt' => get_the_excerpt()));
                 }
                 ?>
-                <h3><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                 <div class="caption">
-                    <a href="<?php echo the_permalink(); ?>"><?php the_excerpt(); ?></a>
+                    <a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a>
                 </div>
-                <a class="btn" href="<?php echo the_permalink(); ?>">veja mais</a>
+                <a class="btn" href="<?php the_permalink(); ?>">veja mais</a>
             </div>  
         <?php
             endwhile;
@@ -104,5 +104,34 @@
         
     </div>
     <!-- Final de Artistas -->
+    <!-- Inicio de Videos -->
+    <div class="span5">
+        <iframe width="400" height="315" src="http://www.youtube.com/embed/XT19qEqjgnA" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <!-- Final de Videos -->
 
+    <!-- Inicio de blog -->
+    <div class="span5 well pull-right">
+        <h3>Blog</h3>
+        <?php
+        $blog = array('category_name' => 'blog', 'posts_per_page' => 3);
+        query_posts($blog);
+
+        if( have_posts() ):
+            while( have_posts()):
+                the_post();
+        ?>
+            <div>
+                <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                <small>postado em <?php the_time('d-m-Y H:i:s') ?> - categoria <?php the_category(' &bull; '); ?></small>
+                <hr />
+            </div>  
+        <?php
+            endwhile;
+        endif;
+        ?>
+        
+
+    </div>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
